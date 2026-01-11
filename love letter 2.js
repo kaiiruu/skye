@@ -1,4 +1,4 @@
-$(document).ready(function () {
+ $(document).ready(function () {
   var envelope = $("#envelope");
   var btn_open = $("#open");
   var btn_reset = $("#reset");
@@ -8,7 +8,6 @@ $(document).ready(function () {
   // Set initial volume to 0 for fade-in
   music.volume = 0;
 
-  // Envelope click
   envelope.click(function () {
     open();
   });
@@ -52,22 +51,16 @@ $(document).ready(function () {
     var heart = document.createElement("div");
     heart.className = "heart";
 
-    // Random horizontal position
     heart.style.left = Math.random() * window.innerWidth + "px";
-
-    // Random size
-    var size = 15 + Math.random() * 20; // 15px - 35px
+    var size = 15 + Math.random() * 20; 
     heart.style.width = size + "px";
     heart.style.height = size + "px";
 
-    // Random float duration
-    var duration = 4 + Math.random() * 3; // 4s - 7s
+    var duration = 4 + Math.random() * 3; 
     heart.style.animationDuration = duration + "s";
 
-    // Append to container
     document.querySelector(".floating-hearts").appendChild(heart);
 
-    // Remove after animation ends
     setTimeout(() => heart.remove(), duration * 1000);
   }
 
@@ -90,6 +83,6 @@ $(document).ready(function () {
   function close() {
     envelope.addClass("close").removeClass("open");
     fadeOut(music, 2000); // fade out music
-    stopHearts();          // remove floating hearts
+    stopHearts();          // stop floating hearts
   }
 });
