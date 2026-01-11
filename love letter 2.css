@@ -1,4 +1,4 @@
-* {
+ * {
         box-sizing: border-box;
       }
 
@@ -79,6 +79,10 @@
         border-radius: 6px;
         box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
         font-family: "Dancing Script", cursive;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: clamp(8px, 3vw, 15px);
       }
 
       .letter:after {
@@ -88,39 +92,41 @@
         bottom: 0;
         left: 0;
         right: 0;
+        pointer-events: none;
       }
 
       .words {
-        position: absolute;
-        left: 10%;
-        width: 80%;
-        height: 14%;
+        position: relative;
+        width: 100%;
         background-color: #ffe6e6;
+        color: #333;
+        line-height: 1.3;
+        padding: clamp(2px, 1vw, 4px);
       }
 
       .words.line1 {
-        top: 10%;
-        width: 20%;
-        height: 7%;
-        font-size: clamp(0.5rem, 2vw, 0.7rem);
+        font-size: clamp(0.65rem, 2.5vw, 0.85rem);
+        font-weight: 600;
+        text-align: left;
+        margin-bottom: clamp(4px, 2vw, 8px);
       }
 
       .words.line2 {
-        top: 30%;
         text-align: center;
-        font-size: clamp(0.7rem, 3vw, 1.1rem);
+        font-size: clamp(0.75rem, 3.2vw, 1.15rem);
+        font-weight: 500;
       }
 
       .words.line3 {
-        top: 50%;
-        font-size: clamp(0.7rem, 3vw, 1.1rem);
+        font-size: clamp(0.75rem, 3.2vw, 1.15rem);
         text-align: center;
+        font-weight: 500;
       }
 
       .words.line4 {
-        top: 70%;
-        font-size: clamp(0.7rem, 3vw, 1.1rem);
+        font-size: clamp(0.75rem, 3.2vw, 1.15rem);
         text-align: center;
+        font-weight: 500;
       }
 
       .open .flap {
@@ -142,7 +148,7 @@
       }
 
       .open .letter {
-        transform: translateY(clamp(-70px, -25vw, -100px));
+        transform: translateY(clamp(-90px, -32vw, -120px));
         transition: transform 0.4s 0.6s ease, z-index 0.6s;
         z-index: 2;
       }
@@ -330,16 +336,53 @@
           height: clamp(250px, 45vh, 300px);
         }
         
+        .letter {
+          padding: clamp(6px, 2vw, 10px);
+        }
+
+        .words {
+          line-height: 1.2;
+        }
+
+        .words.line1 {
+          font-size: clamp(0.6rem, 3vw, 0.75rem);
+        }
+
         .words.line2,
         .words.line3,
         .words.line4 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 2px 5px;
+          font-size: clamp(0.7rem, 3.5vw, 0.95rem);
         }
       }
 
+      /* Very small screens */
+      @media (max-width: 360px) {
+        .letter {
+          padding: 5px;
+        }
+
+        .words {
+          line-height: 1.15;
+        }
+
+        .words.line1 {
+          font-size: 0.6rem;
+          margin-bottom: 3px;
+        }
+
+        .words.line2,
+        .words.line3,
+        .words.line4 {
+          font-size: 0.7rem;
+        }
+      }
+
+      /* Tablet adjustments */
+      @media (min-width: 481px) and (max-width: 768px) {
+        .envlope-wrapper {
+          height: clamp(300px, 45vh, 350px);
+        }
+      }
       /* Tablet adjustments */
       @media (min-width: 481px) and (max-width: 768px) {
         .envlope-wrapper {
