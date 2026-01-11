@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>MY BABY SKYE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LETTER FOR MY BABY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,35 +12,37 @@
     <link rel="stylesheet" href="love letter 2.css" />
   </head>
   <body>
-    <!-- tiktok meowish -->
-    <div class="envlope-wrapper">
-      <div id="envelope" class="close">
-        <div class="front flap"></div>
-        <div class="front pocket"></div>
-        <div class="letter">
-          <div class="words line1">To: My Skye</div>
-          <div class="words line2">my dark days feels bright</div>
-          <div class="words line3">you bring all the colors in one</div>
-          <div class="words line4">at full brightness ♡</div>
-        </div>
-        <div class="hearts">
-          <div class="heart a1"></div>
-          <div class="heart a2"></div>
-          <div class="heart a3"></div>
+    <div class="container">
+      <div class="envlope-wrapper">
+        <div id="envelope" class="close">
+          <div class="front flap"></div>
+          <div class="front pocket"></div>
+          <div class="letter">
+            <div class="words line1">To: My Skye</div>
+            <div class="words line2">my dark days feels bright</div>
+            <div class="words line3">you bring all the colors in one</div>
+            <div class="words line4">at full brightness ♡</div>
+          </div>
+          <div class="hearts">
+            <div class="heart a1"></div>
+            <div class="heart a2"></div>
+            <div class="heart a3"></div>
+          </div>
         </div>
       </div>
+      <div class="reset">
+        <button id="open">Open</button>
+        <button id="reset">Close</button>
+      </div>
     </div>
-    <div class="reset">
-      <button id="open">Open</button>
-      <button id="reset">Close</button>
-    </div>
+
+    <div class="floating-hearts"></div>
+
+    <audio id="bg-music" loop>
+      <source src="bg.mp3" type="audio/mpeg" />
+    </audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="love letter 2.js"></script>
-    <audio id="bg-music" loop>
-  <source src="bg.mp3" type="audio/mpeg" />
-</audio>
-<div class="floating-hearts"></div>
   </body>
 </html>
-
